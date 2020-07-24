@@ -1,0 +1,47 @@
+body{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+img{
+    width: 30vw;
+}
+
+h2{
+    color: white;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item{
+    flex: 1 1 400px;
+}
+
+#red{
+    background-image: url("https://images.unsplash.com/photo-1516710772637-d379a8b58577?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+}
+#orange{
+    background-image: url("https://p1.piqsels.com/preview/500/1000/834/orange-flowers-floral-nature-plant-a-lot.jpg");
+}
+#yellow{
+    background-image: url("https://images.unsplash.com/photo-1582667023252-6d7a75de6eff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+}
+#blue{
+    background-image: url("https://images.unsplash.com/photo-1532036801771-647754d011d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+}
+#purple{
+    background-image: url("https://i1.pickpik.com/photos/251/828/57/blue-pillow-aubrieta-aubrietien-cruciferous-plant-preview.jpg");
+}
+#white{
+    background-image: url("https://images.unsplash.com/photo-1495930425816-2dbeae7f4d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    color: black;
+}
+#pink{
+    background-image: url("https://images.unsplash.com/photo-1494271823928-a80211877d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+}
+
