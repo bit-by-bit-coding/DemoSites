@@ -1,0 +1,143 @@
+body{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.nav{
+    position: fixed;
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+a{
+    flex: 1 1 10vw;
+    padding:  10px 1vw 0 1vw;
+}
+
+button{
+    width: 10vw;
+    height: 30px;
+    font-family: 'Source Serif Pro', serif;
+    color: white;
+    text-align: center;
+    border-color: none;
+}
+
+h1{
+    padding: 30px 0 0 0;
+}
+
+.back{
+    opacity: 60%;
+    color: whitesmoke;
+    border-radius: 20%;
+    padding: 75px 50px;
+    height: 150px;
+    width: 25vw;
+    background-size: cover;
+    font-weight: 600;
+}
+
+#susan{
+    background-image: url("https://images.unsplash.com/photo-1569900887967-d5359f7fdfd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    text-shadow: 1px 1px black;
+}
+#chry{
+    background-image: url("https://images.unsplash.com/photo-1464818303578-e2f8ee97a74e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    color: black;
+    text-shadow: 1px 1px white;
+
+}
+#daff{
+    background-image: url("https://images.unsplash.com/photo-1524706801454-93ae5c14235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=837&q=80");
+    color: rgb(150, 148, 148);
+    text-shadow: 1px 1px white;
+}
+#fenn{
+    background-image: url("https://cdn.pixabay.com/photo/2018/07/26/18/15/nature-3564229_960_720.jpg");
+    color: rgb(63, 62, 62);
+    text-shadow: 1px 1px white;
+}
+#hyac{
+    background-image: url("https://p0.pikist.com/photos/992/513/hyacinth-yellow-flower-flora-nature-floral-blooming.jpg");
+    color: rgb(119, 118, 118);
+    text-shadow: 1px 1px white;
+}
+#gold{
+    background-image: url("https://images.unsplash.com/photo-1590355511663-50e1fec88d0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80");
+    text-shadow: 1px 1px black;
+}
+#rose{
+    background-image: url("https://p0.pikrepo.com/preview/252/384/yellow-rose-in-bloom-during-daytime.jpg");
+    color: black;
+    text-shadow: 1px 1px white;
+}
+#yarr{
+    background-image: url("https://p1.pxfuel.com/preview/882/428/976/yarrow-yellow-flower-flower-garden.jpg");
+    color: rgb(236, 235, 235);
+    text-shadow: 1px 1px black;
+}
+#dwarf{
+    background-image: url("https://images.unsplash.com/photo-1491929007750-dce8ba76e610?ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80");
+    color: black;
+    text-shadow: 1px 1px white;
+}
+
+img{
+    width: 30vw;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item{
+    flex: 1 1 400px;
+}
+
+#home{
+    background-image: url("https://images.unsplash.com/photo-1485487656106-d6aa01db3271?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1012&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+#red{
+    background-image: url("https://images.unsplash.com/photo-1516710772637-d379a8b58577?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+#orange{
+    background-image: url("https://p1.piqsels.com/preview/500/1000/834/orange-flowers-floral-nature-plant-a-lot.jpg");
+    background-size: cover;
+    font-size: 15px;
+}
+#blue{
+    background-image: url("https://images.unsplash.com/photo-1532036801771-647754d011d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+#purple{
+    background-image: url("https://i1.pickpik.com/photos/251/828/57/blue-pillow-aubrieta-aubrietien-cruciferous-plant-preview.jpg");
+    background-size: cover;
+    font-size: 15px;
+}
+#white{
+    background-image: url("https://images.unsplash.com/photo-1495930425816-2dbeae7f4d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    color: black;
+    background-size: cover;
+    font-size: 15px;
+}
+#pink{
+    background-image: url("https://images.unsplash.com/photo-1494271823928-a80211877d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+
