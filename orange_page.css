@@ -1,0 +1,125 @@
+body{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.nav{
+    position: fixed;
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+a{
+    flex: 1 1 10vw;
+    padding:  10px 1vw 0 1vw;
+}
+
+button{
+    width: 10vw;
+    height: 30px;
+    font-family: 'Source Serif Pro', serif;
+    color: white;
+    text-align: center;
+    border-color: none;
+}
+
+h1{
+    padding: 30px 0 0 0;
+}
+
+h3{
+    padding-top: 175px;
+    font-size: 2.5em;
+    color: white;
+}
+
+.weed{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0a/Butterfly_Weed_Entire_Flower_Head_2608px.jpg");
+    background-size: cover;
+    height: 250px;
+    width: 30vw;
+    border-radius: 50%;
+    opacity: 80%;
+}
+
+.wall{
+    background-image: url("https://p0.pxfuel.com/preview/995/271/787/wallflower-wallflower-orange-flowering-spring.jpg");
+    background-size: cover;
+    height: 250px;
+    width: 30vw;
+    border-radius: 50%;
+    opacity: 80%;
+}
+
+.zinnia{
+    background-image: url("https://www.publicdomainpictures.net/pictures/310000/velka/orange-zinnia-flowers-close-up.jpg");
+    background-size: cover;
+    height: 250px;
+    width: 30vw;
+    border-radius: 50%;
+    opacity: 80%;
+}
+
+img{
+    width: 30vw;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item{
+    flex: 1 1 400px;
+}
+
+#home{
+    background-image: url("https://images.unsplash.com/photo-1485487656106-d6aa01db3271?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1012&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+#red{
+    background-image: url("https://images.unsplash.com/photo-1516710772637-d379a8b58577?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+#orange{
+    background-image: url("https://p1.piqsels.com/preview/500/1000/834/orange-flowers-floral-nature-plant-a-lot.jpg");
+    background-size: cover;
+    font-size: 15px;
+}
+#yellow{
+    background-image: url("https://images.unsplash.com/photo-1582667023252-6d7a75de6eff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+#blue{
+    background-image: url("https://images.unsplash.com/photo-1532036801771-647754d011d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+#purple{
+    background-image: url("https://i1.pickpik.com/photos/251/828/57/blue-pillow-aubrieta-aubrietien-cruciferous-plant-preview.jpg");
+    background-size: cover;
+    font-size: 15px;
+}
+#white{
+    background-image: url("https://images.unsplash.com/photo-1495930425816-2dbeae7f4d47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    color: black;
+    background-size: cover;
+    font-size: 15px;
+}
+#pink{
+    background-image: url("https://images.unsplash.com/photo-1494271823928-a80211877d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    font-size: 15px;
+}
+
