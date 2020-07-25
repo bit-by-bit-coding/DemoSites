@@ -2,4 +2,9 @@
 body {
 
 	background-color: green;
+	/* non-tiling image demo */
+	/* background-image: url("7e0_c095955-studio-cat.jpg"); */
+
+	/* Tiling image demo */
+	/* background-image: url("moroccan-flower.png"); */
 }
