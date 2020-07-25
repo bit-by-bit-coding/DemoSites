@@ -1,0 +1,69 @@
+
+* {
+	padding: 10px;
+}
+
+button {
+	padding: 0px;
+}
+
+html {
+	background-color: white;
+} 
+body {
+	background-color: lightblue;
+}
+
+h1, h2, h3 {
+	background-color: red;
+}
+
+p {
+	background-color: lightgreen;
+}
+
+strong {
+	background-color: yellow;
+}
+
+em {
+	background-color: peru;
+}
+
+a {
+	background-color: red;
+}
+
+button {
+	background-color:palevioletred;
+}
+
+img {
+	background-color: purple;
+}
+
+ul {
+	background-color: brown;
+}
+
+ol {
+	background-color: navy;
+}
+
+li {
+	background-color: gray;
+	margin: 2px 0;
+}
+
+iframe {
+	background-color: orange;
+}
+
+div {
+	background-color: burlywood;
+	margin: 10px 0;
+}
+
+/* body {
+	background-color: gray;
+} */
