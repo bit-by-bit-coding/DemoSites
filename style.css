@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto';
+    background: linear-gradient( #41ceda 0%, #153570 175px 80%, #41ceda ) ;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    display: block;
+    margin-left: 100px;
+}
+
+li {
+    margin: 50px 0px;
+    font-size: larger;
+    color: lightgray;
+}
+
+a {
+    color: lightgray;
+}
+
+#header {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-size: 40px;
+}
+
+#footer {
+    margin-top: 75px;
+}
