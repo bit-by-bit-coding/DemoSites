@@ -11,7 +11,11 @@
                 width: 300px;
                 height: 300px;
                 text-align: center;
-                transition: transform 2s;
+                position: relative;
+                bottom: 295px;
+                right: 8px;
+                transition: transform 1.5s;
+                z-index: -1;
             }
             p {
                 font-family: 'Courier New', Courier, monospace;
@@ -22,15 +26,15 @@
     </head>
     <body>
         <h1>Rotate Property</h1>
-        <br><br>
         <h2>Press enter once you finished entering in a value!</h2><br>
+        <img style="display:block;margin:0 auto;" src="https://i.stack.imgur.com/f48Tj.png" width=300 height=300 />
         <div id="myDiv">Rotate this!</div>
         <br>
-        Rotate X: <input id="X" type="textbox"></input> deg
+        Rotate X: <input id="X" type="textbox" value="0"></input> deg
         <br>
-        Rotate Y: <input id="Y" type="textbox"></input> deg
+        Rotate Y: <input id="Y" type="textbox" value="0"></input> deg
         <br>
-        Rotate Z: <input id="Z" type="textbox"></input> deg
+        Rotate Z: <input id="Z" type="textbox" value="0"></input> deg
         <br><br><br><br>
         <p>transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);</p>
         <script>
@@ -43,16 +47,31 @@
                     $("p").html("transform: rotateX(" + x + "deg) rotateY(" + y + "deg) rotateZ(" + z + "deg);");
                 }
                 $("#X").change(function() {
-                    x = $("#X").val();
-                    update();
+                    if ($("#X").val() * 0 != 0) {
+                        alert("Please enter a number for rotateX");
+                    }
+                    else {
+                        x = $("#X").val();
+                        update();
+                    }
                 })
                 $("#Y").change(function() {
-                    y = $("#Y").val();
-                    update();
+                    if ($("#Y").val() * 0 != 0) {
+                        alert("Please enter a number for rotateY");
+                    }
+                    else {
+                        y = $("#Y").val();
+                        update();
+                    }
                 })
                 $("#Z").change(function() {
-                    z = $("#Z").val();
-                    update();
+                    if ($("#Z").val() * 0 != 0) {
+                        alert("Please enter a number for rotateZ");
+                    }
+                    else {
+                        z = $("#Z").val();
+                        update();
+                    }
                 })
             })
         </script>
