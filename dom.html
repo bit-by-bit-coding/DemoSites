@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>DOM Demo</title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            button {
+                border: 1px solid black;
+                text-size: 20px;
+            }
+            div {
+                border: 3px solid black;
+                width: 200px;
+                height: 200px;
+                text-size: 20px;
+            }
+            input {
+                border: 1px solid black;
+                text-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM Demo</h1>
+        <br><br>
+        <h3>.onclick</h3>
+        <div id="one" style="background-color:lightblue;">Click on this div to make it RED!</div>
+        <br>
+        <h3>.onmouseover and .onmouseout</h3>
+        <div id="two" style="background-color:lightgreen;">Hover over this div to make it purple, and take your mouse off to see it become green again!</div>
+        <h3>.onkeyup</h3>
+        <p>Enter something in the textbox, and see the text to the right of it change!</p>
+        <input id="three" type="textbox"></input> <span id="cone">Watch me change!</span>
+        <h3>.onchange</h3>
+        <p>Enter something in the textbox, and then click away to see the text to the right of it change!</p>
+        <input id="four" type="textbox"></input> <span id="ctwo">Watch me change!</span>
+        <h3>.onfocus and .onblur</h3>
+        <p>Click on the textbox, and then click away from the textbox, and see how the text in the textbox changes!</p>
+        <input id="five" type="textbox" value="Hello world!"></input>
+        <script>
+            var one = document.getElementById("one");
+            var two = document.getElementById("two");
+            var three = document.getElementById("three");
+            var four = document.getElementById("four");
+            var five = document.getElementById("five");
+            var cone = document.getElementById("cone");
+            var ctwo = document.getElementById("ctwo");
+            one.onclick = function() {
+                if (one.style.backgroundColor == "lightblue") {
+                    one.style.backgroundColor = "red";
+                    one.innerText = "Click on this div to make it BLUE!";
+                }
+                else {
+                    one.style.backgroundColor = "lightblue";
+                    one.innerText = "Click on this div to make it RED!";
+                }
+            }
+            two.onmousemove = function() {
+                two.style.backgroundColor = "purple";
+            }
+            two.onmouseout = function() {
+                two.style.backgroundColor = "lightgreen";
+            }
+            three.onkeyup = function() {
+                cone.innerText = three.value;
+            }
+            four.onchange = function() {
+                ctwo.innerText = four.value;
+            }
+            five.onfocus = function() {
+                five.value = "Goodbye world!";
+            }
+            five.onblur = function() {
+                five.value = "Hello world!";
+            }
+        </script>
+    </body>
+</html>
