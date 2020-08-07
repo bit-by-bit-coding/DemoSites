@@ -104,7 +104,7 @@
       <span class="draggable" draggable="true" ondragstart="drag(event)" data-boolean-op="and" id="and">[ ] and [ ] </span>
       <span class="draggable" draggable="true" ondragstart="drag(event)" data-boolean-op="or" id="or">[ ] or [ ]</span>
       <span class="draggable" draggable="true" ondragstart="drag(event)" data-boolean-op="not" id="not">not [   ]</span>
-      <span class="draggable" draggable="true" ondragstart="drag(event)" data-boolean-op="input1-equals" id="input1-equals">input1 equals [ text ]</span>
+      
     </div>
   
     <div id="div1" class="fillable" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -124,6 +124,30 @@
         Trash icon used under the terms of the FontAwesome Free license. CC BY SA 4.0.
       </p>
     </footer>
-    
+    <script>
+
+      function isElement(element) {
+        return element instanceof Element || element instanceof HTMLDocument;
+      }
+      wordbank = document.getElementById("wordbank")
+      for (child of document.getElementById("inputs").childNodes) {
+        // <span class="draggable" draggable="true" ondragstart="drag(event)" data-boolean-op="input1-equals" id="input1-equals">input1 equals [ text ]</span>
+        if (isElement(child)) {
+          draggable = document.createElement("span")
+          draggable.classList.add('draggable');
+          draggable.draggable = true;
+          draggable.ondragstart = "drag(event)";
+          draggableid = child.getElementsByTagName("input")[0].id + "-equals"
+          draggable.dataset.booleanOp = draggableid;
+          draggable.id = draggableid;
+          draggable.innerText = "input1 equals[text]"
+
+          wordbank.appendChild(draggable);
+        }
+
+      }
+
+
+    </script>
   </body>
 </html>
