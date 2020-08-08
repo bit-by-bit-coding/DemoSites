@@ -1,0 +1,56 @@
+#wordbank {
+	border: 2px solid black;
+	background-color: grey;
+	padding: 10px;
+}
+
+.draggable {
+	border: 1px solid black;
+	background-color: lightgrey;
+	padding: 2px;
+}
+
+.fillable {
+	border: 1px dashed gray;
+	min-height: 1em;
+	min-width: 5em;
+	display: inline-block;
+	padding: 0.2em;
+	padding-right: 2em;
+}
+
+.draggable > .fillable {
+	min-width: 0px;
+}
+
+.fillable.consumed {
+	border: 1px solid black;
+	padding-right: 0;
+	min-width: 0;
+}
+
+div#inputs {
+	margin: 10px;
+}
+
+/* hex colors borrowed from bootstrap alerts */
+.true {
+	background-color: #d4edda;
+}
+
+.false {
+	background-color: #f8d7da;
+}
+
+
+div#trash {
+	margin: 10px;
+	background-color: #ec3c4b;
+	border: 1px solid #f03144;
+	width: 100px;
+	height: 100px;
+	background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='trash' class='svg-inline--fa fa-trash fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='currentColor' d='M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z'/%3E%3C/svg%3E");
+	opacity: .2;
+	background-repeat: no-repeat;
+	background-position: center; 
+}
