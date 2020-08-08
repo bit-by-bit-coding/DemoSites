@@ -58,7 +58,7 @@
         ev.dataTransfer.setData("text", ev.target.id);
       }
 
-      function drop(ev) {
+      function dropAppend(ev) {
           ev.preventDefault();
           var data = ev.dataTransfer.getData("text");
           let cloned = document.getElementById(data).cloneNode(true);
@@ -118,11 +118,11 @@
     </div>
   
     <h2>input 1 is equal to "strawberries"</h2>
-    <span id="span1" class="fillable" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <span id="span1" class="fillable" ondrop="dropAppend(event)" ondragover="allowDrop(event)">
       
     </span>
   
-    <span id="span2" class="fillable"  ondrop="drop(event)" ondragover="allowDrop(event)">
+    <span id="span2" class="fillable"  ondrop="dropAppend(event)" ondragover="allowDrop(event)">
     
     </span>
 
