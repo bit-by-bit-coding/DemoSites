@@ -147,7 +147,7 @@
           draggable = document.createElement("span")
           draggable.classList.add('draggable');
           draggable.draggable = true;
-          draggable.ondragstart = "drag(event)";
+          draggable.setAttribute("ondragstart", "drag(event)"); 
           draggableid = child.getElementsByTagName("input")[0].id + "-equals"
           draggable.dataset.booleanOp = draggableid;
           draggable.id = draggableid;
