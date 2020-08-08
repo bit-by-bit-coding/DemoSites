@@ -1,3 +1,7 @@
+div {
+	margin: 10px;
+}
+
 #wordbank {
 	border: 2px solid black;
 	background-color: grey;
@@ -51,7 +55,6 @@ div#inputs {
 
 
 div#trash {
-	margin: 10px;
 	background-color: #ec3c4b;
 	border: 1px solid #f03144;
 	width: 100px;
