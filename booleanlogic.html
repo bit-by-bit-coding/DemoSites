@@ -65,11 +65,14 @@
         ev.dataTransfer.setData("text", ev.target.id);
       }
 
+      function fromWordbank(element) {
+        return element.parentNode.id == "wordbank"
+      }
       function dropAppend(ev) {
           ev.preventDefault();
           var data = ev.dataTransfer.getData("text");
           let draggedElement = document.getElementById(data)
-          if (draggedElement.parentNode.id == "wordbank") {
+          if (fromWordbank(draggedElement)) {
             draggedElement = draggedElement.cloneNode(true);
             draggedElement.id = nextUniqueId(draggedElement.id);
           }
@@ -129,7 +132,7 @@
           ev.preventDefault();
           var data = ev.dataTransfer.getData("text");
           var element = document.getElementById(data);
-          if (element.parentNode.id != "wordbank") {
+          if (!fromWordbank(element)) {
             element.remove();
           }
           
