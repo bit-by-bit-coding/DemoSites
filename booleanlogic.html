@@ -151,10 +151,10 @@
           draggable.classList.add('draggable');
           draggable.draggable = true;
           draggable.setAttribute("ondragstart", "drag(event)"); 
-          draggableid = child.getElementsByTagName("input")[0].id + "-equals"
+          draggableid = child.getElementsByTagName("input")[0].id
           draggable.dataset.booleanOp = draggableid;
           draggable.id = draggableid;
-          draggable.innerText = "input1 equals[text]"
+          draggable.innerText = "input1"
 
           wordbank.appendChild(draggable);
         }
