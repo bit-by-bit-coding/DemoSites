@@ -110,6 +110,7 @@ for (child of document.getElementById("inputs").childNodes) {
 	if (isElement(child)) {
 		draggable = document.createElement("span")
 		draggable.classList.add('draggable');
+		draggable.classList.add('noparens');
 		draggable.draggable = true;
 		draggable.setAttribute("ondragstart", "drag(event)");
 		draggableid = child.getElementsByTagName("input")[0].id

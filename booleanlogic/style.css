@@ -9,6 +9,12 @@
 	background-color: lightgrey;
 	padding: 2px;
 }
+.draggable:not(.noparens)::before {
+	content: "(";
+}
+.draggable:not(.noparens):after {
+	content: ")";
+}
 
 .fillable {
 	border: 1px dashed gray;
