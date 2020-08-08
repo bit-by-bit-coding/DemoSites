@@ -24,6 +24,8 @@ function fromWordbank(element) {
 }
 function dropAppend(ev) {
 	ev.preventDefault();
+	// https://stackoverflow.com/questions/17368913/drag-drop-with-nested-target-in-html5#17369436
+	ev.stopPropagation();
 	//un-consume the source container if it was consumed
 	let oldelementid = ev.dataTransfer.getData("text");
 	let oldparentelement = document.getElementById(oldelementid).parentNode
