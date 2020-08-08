@@ -96,6 +96,15 @@ function trash(ev) {
 
 }
 
+function generateFillable() {
+	fillable = document.createElement("span")
+	fillable.classList.add('fillable');
+	fillable.setAttribute("ondrop", "dropConsume(event)");
+	fillable.setAttribute("ondragover", "allowDrop(event)");
+		fillable.id = nextUniqueId("fillable");
+	// fillable.innerText = "input1"
+	return fillable
+}
 
 // ##     ##    ###    #### ##    ## 
 // ###   ###   ## ##    ##  ###   ## 
@@ -107,6 +116,32 @@ function trash(ev) {
 //https://www.coolgenerator.com/ascii-text-generator using banner3
 
 wordbank = document.getElementById("wordbank")
+
+//generate contents for each operator
+
+for (word of wordbank.childNodes) {
+	if (isElement(word)) {
+		console.log(word)
+		console.log(typeof word.dataset.inputsCount)
+		//assume that each word bank node only has text inside it
+		text = word.childNodes[0]
+
+		switch (parseInt(word.dataset.inputsCount)) {
+			case 2:
+				//insert one fillable on either side of the text
+				word.insertBefore(generateFillable(), text);
+				word.appendChild(generateFillable());
+				break;
+			case 1:
+				//so far we only have not (!) so just assume we insert the single fillable after the text
+				word.appendChild(generateFillable());
+				break;
+			default:
+				//dont add any inputs
+				break;
+		}
+	}
+}
 for (child of document.getElementById("inputs").childNodes) {
 	// <span class="draggable" draggable="true" ondragstart="drag(event)" data-boolean-op="input1-equals" id="input1-equals">input1 equals [ text ]</span>
 	if (isElement(child)) {
