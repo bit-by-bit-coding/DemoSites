@@ -59,20 +59,31 @@
           ev.preventDefault();
           var data = ev.dataTransfer.getData("text");
           let cloned = document.getElementById(data).cloneNode(true);
-          cloned.id= newUniqueId(cloned.id);
+          cloned.id= nextUniqueId(cloned.id);
           ev.target.appendChild(cloned);
         }
 
-      function newUniqueId(prefix="") {
-        // generate random number and append to id
-        var random = prefix + randomIntFromInterval(0,100);
+      function nextUniqueId(prefix="") {
+        var newId = ""
 
-        //keep generating random id's until you find one that isnt in use
-        while (document.getElementById(random)) {
-          random = prefix + randomIntFromInterval(0, 100);
+        if ((index = prefix.search(/\d/)) == -1) {
+          //if theres no numbers in the id, add one
+          let random = prefix + 0;
+
+          //keep incrementig the id number until you find one that isnt in use
+          while (document.getElementById(random)) {
+            random = nextUniqueId(random);
+          }
+
+          newId = random
+          
+        } else {
+          //if there are numbers in the id
+          idNumber = parseInt(prefix.slice(index))
+
+          newId = prefix.slice(0, index) + ++idNumber;
         }
-        //return a gauranteed unique id
-        return random
+        return newId
       }
       // https://stackoverflow.com/a/7228322
       function randomIntFromInterval(min, max) {
