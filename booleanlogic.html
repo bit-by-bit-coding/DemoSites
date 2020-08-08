@@ -186,7 +186,9 @@
     <script>
 
       function isElement(element) {
-        return element instanceof Element || element instanceof HTMLDocument;
+        // https://www.w3schools.com/jsref/prop_node_nodetype.asp
+        return element.nodeType == 1;
+        // return element instanceof Element || element instanceof HTMLDocument;
       }
       wordbank = document.getElementById("wordbank")
       for (child of document.getElementById("inputs").childNodes) {
