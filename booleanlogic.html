@@ -70,6 +70,11 @@
       }
       function dropAppend(ev) {
           ev.preventDefault();
+          //un-consume the source container if it was consumed
+          let oldelementid = ev.dataTransfer.getData("text");
+          let oldparentelement = document.getElementById(oldelementid).parentNode
+          unConsume(oldparentelement)
+
           var data = ev.dataTransfer.getData("text");
           let draggedElement = document.getElementById(data)
           if (fromWordbank(draggedElement)) {
@@ -80,13 +85,6 @@
         }
 
        function dropConsume(ev) {
-           ev.preventDefault();
-
-          //un-consume the source container if it was consumed
-           let oldelementid = ev.dataTransfer.getData("text");
-          let oldparentelement = document.getElementById(oldelementid).parentNode
-          unConsume(oldparentelement)
-
           dropAppend(ev)
 
           consume(ev.target)
@@ -130,6 +128,10 @@
 
       function trash(ev) {
           ev.preventDefault();
+          //un-consume the source container if it was consumed
+          let oldelementid = ev.dataTransfer.getData("text");
+          let oldparentelement = document.getElementById(oldelementid).parentNode
+          unConsume(oldparentelement)
           var data = ev.dataTransfer.getData("text");
           var element = document.getElementById(data);
           if (!fromWordbank(element)) {
