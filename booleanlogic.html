@@ -68,9 +68,14 @@
       function dropAppend(ev) {
           ev.preventDefault();
           var data = ev.dataTransfer.getData("text");
-          let cloned = document.getElementById(data).cloneNode(true);
-          cloned.id= nextUniqueId(cloned.id);
-          ev.target.appendChild(cloned);
+          let draggedElement = document.getElementById(data)
+          if (draggedElement.parentNode.id == "wordbank") {
+            draggedElement = draggedElement.cloneNode(true);
+            draggedElement.id = nextUniqueId(draggedElement.id);
+          }
+          ev.target.appendChild(draggedElement);
+        }
+
        function dropConsume(ev) {
            ev.preventDefault();
 
