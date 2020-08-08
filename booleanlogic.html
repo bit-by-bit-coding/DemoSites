@@ -23,6 +23,12 @@
         padding-right: 2em;
       }
 
+      .fillable.consumed {
+        border: 1px solid black;
+        padding-right: 0;
+        min-width: 0;
+      }
+
       div#inputs {
         margin: 10px;
       }
@@ -65,6 +71,30 @@
           let cloned = document.getElementById(data).cloneNode(true);
           cloned.id= nextUniqueId(cloned.id);
           ev.target.appendChild(cloned);
+       function dropConsume(ev) {
+           ev.preventDefault();
+
+          //un-consume the source container if it was consumed
+           let oldelementid = ev.dataTransfer.getData("text");
+          let oldparentelement = document.getElementById(oldelementid).parentNode
+          unConsume(oldparentelement)
+
+          dropAppend(ev)
+
+          consume(ev.target)
+        }
+
+
+        function consume(element) {
+          element.removeAttribute("ondragover");// ensure nothing else can be dropped here
+          element.classList.add("consumed") //style it to look "consumed"
+        }
+
+        function unConsume(element) {
+          if (element.classList.contains("consumed")) {
+            element.classList.remove("consumed")
+            element.setAttribute("ondragover", "allowDrop(event)")
+          }
         }
 
       function nextUniqueId(prefix="") {
