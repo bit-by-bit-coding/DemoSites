@@ -10,7 +10,9 @@ function isText(element) {
 }
 
 function allowDrop(ev) {
-	ev.preventDefault();
+	if (ev.target.classList.contains("fillable")) {
+		ev.preventDefault();
+	}
 }
 
 function drag(ev) {
