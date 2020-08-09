@@ -118,6 +118,14 @@ function filterOutTextNodes(nodeList) {
 	return nodesClone
 }
 
+function setEvaluationStyle(draggable, style){
+	//reset true or false classes
+	draggable.classList.remove("true")
+	draggable.classList.remove("false")
+	//set new class
+	draggable.classList.add(String(style))
+}
+
 // ##     ##    ###    #### ##    ## 
 // ###   ###   ## ##    ##  ###   ## 
 // #### ####  ##   ##   ##  ####  ## 
