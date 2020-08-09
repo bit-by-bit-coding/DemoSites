@@ -141,7 +141,7 @@ function isFilled(draggable) {
 
 	children = filterOutTextNodes(draggable.childNodes)
 	for (fillable of children) {
-		if (!isConsumed(fillable)) {
+		if (isFillable(fillable) && !isConsumed(fillable)) {
 			return false
 		}
 	}
