@@ -3,6 +3,7 @@ const wordbankid = "wordbank";
 
 
 const FILLABLE_CONSUMED_CLASS = "consumed";
+const FILLABLE_CLASS = "fillable";
 function isElement(element) {
 	// https://www.w3schools.com/jsref/prop_node_nodetype.asp
 	return element.nodeType == 1;
@@ -14,7 +15,7 @@ function isText(element) {
 }
 
 function allowDrop(ev) {
-	if (ev.target.classList.contains("fillable") && ! fromWordbank(ev.target.parentNode)) {
+	if (ev.target.classList.contains(FILLABLE_CLASS) && ! fromWordbank(ev.target.parentNode)) {
 		ev.preventDefault();
 	}
 }
@@ -107,7 +108,7 @@ function trash(ev) {
 
 function generateFillable() {
 	fillable = document.createElement("span")
-	fillable.classList.add('fillable');
+	fillable.classList.add(FILLABLE_CLASS);
 	fillable.setAttribute("ondrop", "dropConsume(event)");
 	fillable.setAttribute("ondragover", "allowDrop(event)");
 		fillable.id = nextUniqueId("fillable");
