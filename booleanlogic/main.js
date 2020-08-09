@@ -108,6 +108,16 @@ function generateFillable() {
 	return fillable
 }
 
+function filterOutTextNodes(nodeList) {
+	let nodesClone = Array.from(nodeList).slice();
+	for (node of nodesClone){
+		if (isText(node)) {
+			nodesClone.remove(node)
+		}
+	}
+	return nodesClone
+}
+
 // ##     ##    ###    #### ##    ## 
 // ###   ###   ## ##    ##  ###   ## 
 // #### ####  ##   ##   ##  ####  ## 
