@@ -15,7 +15,7 @@ function isText(element) {
 }
 
 function allowDrop(ev) {
-	if (ev.target.classList.contains(FILLABLE_CLASS) && ! fromWordbank(ev.target.parentNode)) {
+	if (isFillable(ev.target) && ! fromWordbank(ev.target.parentNode)) {
 		ev.preventDefault();
 	}
 }
@@ -68,6 +68,9 @@ function isConsumed(fillable) {
 	return fillable.classList.contains(FILLABLE_CONSUMED_CLASS);
 }
 
+function isFillable(element) {
+	return element.classList.contains(FILLABLE_CLASS)
+}
 
 function nextUniqueId(prefix = "") {
 	var newId = ""
