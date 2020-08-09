@@ -55,11 +55,16 @@ function consume(fillable) {
 }
 
 function unConsume(fillable) {
-	if (fillable.classList.contains("consumed")) {
+	if (isConsumed(fillable)) {
 		fillable.classList.remove("consumed")
 		fillable.setAttribute("ondragover", "allowDrop(event)")
 	}
 }
+
+function isConsumed(fillable) {
+	return fillable.classList.contains("consumed");
+}
+
 
 function nextUniqueId(prefix = "") {
 	var newId = ""
