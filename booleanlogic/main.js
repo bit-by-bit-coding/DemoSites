@@ -49,15 +49,15 @@ function dropConsume(ev) {
 }
 
 
-function consume(element) {
-	element.removeAttribute("ondragover");// ensure nothing else can be dropped here
-	element.classList.add("consumed") //style it to look "consumed"
+function consume(fillable) {
+	fillable.removeAttribute("ondragover");// ensure nothing else can be dropped here
+	fillable.classList.add("consumed") //style it to look "consumed"
 }
 
-function unConsume(element) {
-	if (element.classList.contains("consumed")) {
-		element.classList.remove("consumed")
-		element.setAttribute("ondragover", "allowDrop(event)")
+function unConsume(fillable) {
+	if (fillable.classList.contains("consumed")) {
+		fillable.classList.remove("consumed")
+		fillable.setAttribute("ondragover", "allowDrop(event)")
 	}
 }
 
