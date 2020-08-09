@@ -137,6 +137,17 @@ function setEvaluationStyle(draggable, style){
 	draggable.classList.add(String(style))
 }
 
+function isFilled(draggable) {
+
+	children = filterOutTextNodes(draggable.childNodes)
+	for (fillable of children) {
+		if (!isConsumed(fillable)) {
+			return false
+		}
+	}
+	return true
+}
+
 // ##     ##    ###    #### ##    ## 
 // ###   ###   ## ##    ##  ###   ## 
 // #### ####  ##   ##   ##  ####  ## 
