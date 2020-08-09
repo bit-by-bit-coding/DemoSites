@@ -12,7 +12,7 @@ function isText(element) {
 }
 
 function allowDrop(ev) {
-	if (ev.target.classList.contains("fillable")) {
+	if (ev.target.classList.contains("fillable") && ! fromWordbank(ev.target.parentNode)) {
 		ev.preventDefault();
 	}
 }
