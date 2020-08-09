@@ -1,4 +1,6 @@
 
+const wordbankid = "wordbank";
+
 function isElement(element) {
 	// https://www.w3schools.com/jsref/prop_node_nodetype.asp
 	return element.nodeType == 1;
@@ -20,7 +22,7 @@ function drag(ev) {
 }
 
 function fromWordbank(element) {
-	return element.parentNode.id == "wordbank"
+	return element.parentNode.id == wordbankid
 }
 function dropAppend(ev) {
 	ev.preventDefault();
@@ -115,7 +117,7 @@ function generateFillable() {
 // ##     ## ##     ## #### ##    ## 
 //https://www.coolgenerator.com/ascii-text-generator using banner3
 
-wordbank = document.getElementById("wordbank")
+wordbank = document.getElementById(wordbankid)
 
 //generate contents for each operator
 
