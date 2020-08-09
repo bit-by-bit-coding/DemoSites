@@ -1,6 +1,8 @@
 
 const wordbankid = "wordbank";
 
+
+const FILLABLE_CONSUMED_CLASS = "consumed";
 function isElement(element) {
 	// https://www.w3schools.com/jsref/prop_node_nodetype.asp
 	return element.nodeType == 1;
@@ -51,18 +53,18 @@ function dropConsume(ev) {
 
 function consume(fillable) {
 	fillable.removeAttribute("ondragover");// ensure nothing else can be dropped here
-	fillable.classList.add("consumed") //style it to look "consumed"
+	fillable.classList.add(FILLABLE_CONSUMED_CLASS) //style it to look "consumed"
 }
 
 function unConsume(fillable) {
 	if (isConsumed(fillable)) {
-		fillable.classList.remove("consumed")
+		fillable.classList.remove(FILLABLE_CONSUMED_CLASS)
 		fillable.setAttribute("ondragover", "allowDrop(event)")
 	}
 }
 
 function isConsumed(fillable) {
-	return fillable.classList.contains("consumed");
+	return fillable.classList.contains(FILLABLE_CONSUMED_CLASS);
 }
 
 
