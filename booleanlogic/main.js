@@ -230,6 +230,8 @@ function isFullyFilled(draggable) {
 		draggable = getDraggableFromFillable(draggable)
 	}
 
+	if (draggable.dataset.booleanOp === "value") return true;
+
 	var fillables = filterOutTextNodes(draggable.childNodes)
 
 	if (parseInt(draggable.dataset.inputsCount) === 0) {
