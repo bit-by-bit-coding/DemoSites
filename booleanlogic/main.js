@@ -130,7 +130,7 @@ function filterOutTextNodes(nodeList) {
 	return nodesClone
 }
 
-function evaluate(draggable) {
+function checkLogic(draggable) {
 	if (isFillable(draggable)) {
 		draggable = getDraggableFromFillable(draggable)
 	}
@@ -144,19 +144,19 @@ function evaluate(draggable) {
 
 	switch (draggable.dataset.booleanOp) {
 		case "and":
-			verdict = evaluate(children[0].childNodes[0]) && evaluate(children[1]);
+			verdict = checkLogic(children[0].childNodes[0]) && checkLogic(children[1]);
 			break;
 		case "or":
-			verdict = (evaluate(children[0]) || evaluate(children[1]));
+			verdict = (checkLogic(children[0]) || checkLogic(children[1]));
 			break;
 		case "not":
-			verdict =  !evaluate(children[0])
+			verdict =  !checkLogic(children[0])
 			break;
 		case "equals":
-			verdict =  evaluate(children[0]) == evaluate(children[1]);
+			verdict =  checkLogic(children[0]) == checkLogic(children[1]);
 			break;
 		case "not-equals":
-			verdict =  evaluate(children[0]) != evaluate(children[1]);
+			verdict =  checkLogic(children[0]) != checkLogic(children[1]);
 			break;
 		case "value":
 		case "true":
