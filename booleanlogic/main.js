@@ -252,7 +252,37 @@ function isFullyFilled(draggable) {
 		return isFullyFilled(fillables[0]) && isFullyFilled(fillables[1])
 	}
 
-}	
+} 
+
+//https://stackoverflow.com/a/23013726
+function kvSwap(json) {
+	var ret = {};
+	for (var key in json) {
+		ret[json[key]] = key;
+	}
+	return ret;
+}
+
+
+
+function toggleAdvancedText(text) {
+	var lookupSymbol = {
+		"and":"&&",
+		"or": "||",
+		"not":"!",
+		"equals": "===",
+		"does not equal":"!="
+	}
+	var lookupWords = kvSwap(lookupSymbol)
+
+	const trim = text.trim();
+	var result = trim in lookupSymbol ? lookupSymbol[trim] : lookupWords[trim]
+
+	if (!result) return false;
+
+	//re-add spaces
+	return " " + result + " ";
+}
 
 // ##     ##    ###    #### ##    ## 
 // ###   ###   ## ##    ##  ###   ## 
@@ -263,15 +293,33 @@ function isFullyFilled(draggable) {
 // ##     ## ##     ## #### ##    ## 
 //https://www.coolgenerator.com/ascii-text-generator using banner3
 
-wordbank = document.getElementById(wordbankid)
+let wordbank = document.getElementById(wordbankid)
+let advancedModeButton = document.getElementById("advancedmode")
+var urlParams = new URLSearchParams(window.location.search);
+var advancedMode = urlParams.get('advanced')
+
 
 //generate contents for each operator
+
+advancedModeButton.innerText = (advancedMode? "Disable":"Enable") + " Advanced Mode";
+
+advancedModeButton.onclick = () => {
+	if (advancedMode) {
+		window.location = window.location.pathname
+	} else {
+		window.location.href = window.location.href + '?advanced=1';
+	}
+}
 
 for (word of wordbank.childNodes) {
 	if (isElement(word)) {
 		//assume that each word bank node only has text inside it
-		text = word.childNodes[0]
+		
+		if (advancedMode && parseInt(word.dataset.inputsCount) > 0) {
+			word.innerText = toggleAdvancedText(word.innerText);
+		}
 
+		text = word.childNodes[0]
 		switch (parseInt(word.dataset.inputsCount)) {
 			case 2:
 				//insert one fillable on either side of the text
