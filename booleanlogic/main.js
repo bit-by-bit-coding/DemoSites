@@ -130,6 +130,47 @@ function filterOutTextNodes(nodeList) {
 	return nodesClone
 }
 
+function evaluate(draggable) {
+	if (isFillable(draggable)) {
+		draggable = getDraggableFromFillable(draggable)
+	}
+	if (!isFullyFilled(draggable)) {
+		alert("please fill in all parts of the boolean statement")
+		return undefined;
+	}
+
+	let children = filterOutTextNodes(draggable.childNodes)
+	let verdict = false;
+
+	switch (draggable.dataset.booleanOp) {
+		case "and":
+			verdict = evaluate(children[0].childNodes[0]) && evaluate(children[1]);
+			break;
+		case "or":
+			verdict = (evaluate(children[0]) || evaluate(children[1]));
+			break;
+		case "not":
+			verdict =  !evaluate(children[0])
+			break;
+		case "equals":
+			verdict =  evaluate(children[0]) == evaluate(children[1]);
+			break;
+		case "not-equals":
+			verdict =  evaluate(children[0]) != evaluate(children[1]);
+			break;
+		case "value":
+		case "true":
+		case "false":
+			verdict = getValueOfValueDraggable(draggable);
+			break;
+		default:
+			console.error("boolean op not found")
+			break;
+	}
+	setEvaluationStyle(draggable, verdict)
+	return verdict
+}
+
 function setEvaluationStyle(draggable, style){
 	if (isFillable(draggable)) {
 		draggable = getDraggableFromFillable(draggable)
