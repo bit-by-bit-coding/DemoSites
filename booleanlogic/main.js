@@ -287,8 +287,10 @@ for (child of document.getElementById("inputs").childNodes) {
 		draggable.classList.add('noparens');
 		draggable.draggable = true;
 		draggable.setAttribute("ondragstart", "drag(event)");
-		draggableid = child.getElementsByTagName("input")[0].id + "-value"
+		let inputid = child.getElementsByTagName("input")[0].id
+		let draggableid = inputid + "-value"
 		draggable.dataset.booleanOp = "value";
+		draggable.dataset.valueSource = inputid;
 		draggable.id = draggableid;
 		draggable.innerText = "input1"
 
