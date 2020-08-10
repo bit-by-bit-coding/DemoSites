@@ -175,11 +175,17 @@ function setEvaluationStyle(draggable, style){
 	if (isFillable(draggable)) {
 		draggable = getDraggableFromFillable(draggable)
 	}
-	//reset true or false classes
-	draggable.classList.remove("true")
-	draggable.classList.remove("false")
-	//set new class
-	draggable.classList.add(String(style))
+	const styles = ["true", "false"];
+
+	for (let s of styles){
+		//reset al existing style classes
+		draggable.classList.remove(s)
+	}
+
+	if (styles.includes(String(style))) {
+		//set new class
+		draggable.classList.add(String(style))
+	}
 }
 
 function getValueOfValueDraggable(draggable) {
