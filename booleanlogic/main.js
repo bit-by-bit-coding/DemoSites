@@ -4,6 +4,7 @@ const wordbankid = "wordbank";
 
 const FILLABLE_CONSUMED_CLASS = "consumed";
 const FILLABLE_CLASS = "fillable";
+
 function isElement(element) {
 	// https://www.w3schools.com/jsref/prop_node_nodetype.asp
 	return element.nodeType == 1;
@@ -231,7 +232,7 @@ function getDraggableFromFillable(fillable) {
 }
 
 function isFullyFilled(draggable) {
-	//if draggable is undefined (i.e. its parenthas no children) then something is not filled in
+	//if draggable is undefined (i.e. its parent has no children) then something is not filled in
 	if (!draggable) return false;
 
 	//if a fillable is passed in, convert it to a draggable
@@ -336,6 +337,8 @@ for (word of wordbank.childNodes) {
 		}
 	}
 }
+
+//populate wordbank with values for each input
 for (child of document.getElementById("inputs").childNodes) {
 	// <span class="draggable" draggable="true" ondragstart="drag(event)" data-boolean-op="input1-equals" id="input1-equals">input1 equals [ text ]</span>
 	if (isElement(child)) {
