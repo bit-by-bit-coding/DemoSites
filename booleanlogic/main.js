@@ -138,6 +138,25 @@ function setEvaluationStyle(draggable, style){
 	draggable.classList.add(String(style))
 }
 
+function getValueOfValueDraggable(draggable) {
+	if (isFillable(draggable)) {
+		draggable = getDraggableFromFillable(draggable)
+	}
+
+	let booleanOp = draggable.dataset.booleanOp;
+
+	if (booleanOp === "value" && draggable.dataset.valueSource === "self") {
+		return draggable.getElementsByTagName("input")[0].value
+	} else if (booleanOp === "value") {
+		return draggable.getElementsByTagName("input")[0].value
+	} else if (booleanOp === "true" || booleanOp === "false") {
+		return Boolean(booleanOp);
+	} else {
+		//not a valid value draggable
+		return undefined;
+	}
+}
+
 function isFilled(draggable) {
 
 	children = filterOutTextNodes(draggable.childNodes)
