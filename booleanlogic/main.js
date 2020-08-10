@@ -131,6 +131,9 @@ function filterOutTextNodes(nodeList) {
 }
 
 function setEvaluationStyle(draggable, style){
+	if (isFillable(draggable)) {
+		draggable = getDraggableFromFillable(draggable)
+	}
 	//reset true or false classes
 	draggable.classList.remove("true")
 	draggable.classList.remove("false")
@@ -158,6 +161,9 @@ function getValueOfValueDraggable(draggable) {
 }
 
 function isFilled(draggable) {
+	if (isFillable(draggable)) {
+		draggable = getDraggableFromFillable(draggable)
+	}
 
 	fillables = filterOutTextNodes(draggable.childNodes)
 	for (fillable of fillables) {
