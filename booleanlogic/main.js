@@ -123,7 +123,8 @@ function filterOutTextNodes(nodeList) {
 	let nodesClone = Array.from(nodeList).slice();
 	for (node of nodesClone){
 		if (isText(node)) {
-			nodesClone.remove(node)
+			//at the position of the node, remove one node
+			nodesClone.splice(nodesClone.indexOf(node), 1);
 		}
 	}
 	return nodesClone
