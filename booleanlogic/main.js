@@ -131,6 +131,9 @@ function filterOutTextNodes(nodeList) {
 }
 
 function checkLogic(draggable) {
+	if (typeof draggable === 'string' || draggable instanceof String){
+		draggable = document.getElementById(draggable)
+	}
 	if (isFillable(draggable)) {
 		draggable = getDraggableFromFillable(draggable)
 	}
