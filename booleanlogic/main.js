@@ -151,6 +151,33 @@ function isFilled(draggable) {
 function getDraggableFromFillable(fillable) {
 	return fillable.childNodes[0]
 }
+
+function isFullyFilled(draggable) {
+	//if draggable is undefined (i.e. its parenthas no children) then something is not filled in
+	if (!draggable) return false;
+
+	//if a fillable is passed in, convert it to a draggable
+	if (isFillable(draggable)) {
+		draggable = getDraggableFromFillable(draggable)
+	}
+
+	var fillables = filterOutTextNodes(draggable.childNodes)
+	// console.log(draggable.dataset.inputsCount)
+	// console.log(fillables)
+	// console.log(fillables[0])
+	// console.log(fillables[1])
+
+	if (parseInt(draggable.dataset.inputsCount) === 0) {
+		return true;
+
+	} else if (parseInt(draggable.dataset.inputsCount) === 1) { 
+		return isFullyFilled(fillables[0])
+	} else {
+		return isFullyFilled(fillables[0]) && isFullyFilled(fillables[1])
+	}
+
+}	
+
 // ##     ##    ###    #### ##    ## 
 // ###   ###   ## ##    ##  ###   ## 
 // #### ####  ##   ##   ##  ####  ## 
