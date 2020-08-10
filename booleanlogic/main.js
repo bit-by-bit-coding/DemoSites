@@ -188,10 +188,6 @@ function isFullyFilled(draggable) {
 	}
 
 	var fillables = filterOutTextNodes(draggable.childNodes)
-	// console.log(draggable.dataset.inputsCount)
-	// console.log(fillables)
-	// console.log(fillables[0])
-	// console.log(fillables[1])
 
 	if (parseInt(draggable.dataset.inputsCount) === 0) {
 		return true;
@@ -219,8 +215,6 @@ wordbank = document.getElementById(wordbankid)
 
 for (word of wordbank.childNodes) {
 	if (isElement(word)) {
-		console.log(word)
-		console.log(typeof word.dataset.inputsCount)
 		//assume that each word bank node only has text inside it
 		text = word.childNodes[0]
 
