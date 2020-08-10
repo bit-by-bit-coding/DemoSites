@@ -152,8 +152,10 @@ function getValueOfValueDraggable(draggable) {
 		return draggable.getElementsByTagName("input")[0].value
 	} else if (booleanOp === "value") {
 		return draggable.getElementsByTagName("input")[0].value
-	} else if (booleanOp === "true" || booleanOp === "false") {
-		return Boolean(booleanOp);
+	} else if (booleanOp === "true"){
+		return true;
+	} else if(booleanOp === "false") {
+		return false;
 	} else {
 		//not a valid value draggable
 		return undefined;
