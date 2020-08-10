@@ -159,8 +159,8 @@ function getValueOfValueDraggable(draggable) {
 
 function isFilled(draggable) {
 
-	children = filterOutTextNodes(draggable.childNodes)
-	for (fillable of children) {
+	fillables = filterOutTextNodes(draggable.childNodes)
+	for (fillable of fillables) {
 		if (isFillable(fillable) && !isConsumed(fillable)) {
 			return false
 		}
