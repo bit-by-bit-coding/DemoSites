@@ -148,6 +148,9 @@ function isFilled(draggable) {
 	return true
 }
 
+function getDraggableFromFillable(fillable) {
+	return fillable.childNodes[0]
+}
 // ##     ##    ###    #### ##    ## 
 // ###   ###   ## ##    ##  ###   ## 
 // #### ####  ##   ##   ##  ####  ## 
