@@ -192,7 +192,7 @@ function getValueOfValueDraggable(draggable) {
 	if (booleanOp === "value" && draggable.dataset.valueSource === "self") {
 		return draggable.getElementsByTagName("input")[0].value
 	} else if (booleanOp === "value") {
-		return draggable.getElementsByTagName("input")[0].value
+		return document.getElementById(draggable.dataset.valueSource).value
 	} else if (booleanOp === "true"){
 		return true;
 	} else if(booleanOp === "false") {
