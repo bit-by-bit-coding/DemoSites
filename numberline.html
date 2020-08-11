@@ -102,6 +102,16 @@
         top: 1
       });
 
+      let pointObj = {
+        id: "range" + points.length,
+        latex: getRandMin() + " <= x  < " + getRandMax(),
+        color: Desmos.Colors.BLUE
+      };
+
+      points.push(pointObj);
+      // Add an expression
+      calculator.setExpression(pointObj);
+
 
 
     }
