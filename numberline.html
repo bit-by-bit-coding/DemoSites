@@ -57,11 +57,11 @@
           shiftInput.onchange = update;
 
           function getScale(){
-            return scaleInput.value
+            return parseInt(scaleInput.value)
           }
 
           function getShift() {
-              return shiftInput.value
+              return parseInt(shiftInput.value)
             }
           //alias for getShift. they are the same value
           getRandMin = getShift;
