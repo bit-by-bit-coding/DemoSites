@@ -1,100 +1,123 @@
 <html>
-  <head>
-    <title></title>
-    <meta content="">
-    <style>
-      #numberline {
-        border: 10px solid black;
-        border-top-width: 0;
-        border-bottom-width: 20px;
-        /* margin: 0 auto; */
-        width: 90vw;
-        height: 10px;
-        position: absolute;
-        top: 50vh;
-      }
-      div.marker{
-        border: 0px solid black;
-        border-left-width: 5px;
-        height: 20px;
-        margin: 0 auto;
-      }
 
-    </style>
-  </head>
-  <body>
-    <h1>Math.random() Demo</h1>
-    <!-- <div id="0" class="numbers">0 <div class="marker"></div></div>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <style>
+    #numberline {
+      border: 10px solid black;
+      border-top-width: 0;
+      border-bottom-width: 20px;
+      /* margin: 0 auto; */
+      width: 90vw;
+      height: 10px;
+      position: absolute;
+      top: 50vh;
+    }
+
+    div.marker {
+      border: 0px solid black;
+      border-left-width: 5px;
+      height: 20px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Math.random() Demo</h1>
+  <!-- <div id="0" class="numbers">0 <div class="marker"></div></div>
     <div id="numberline"></div> -->
-    <label>Scale: <input id= "scale" type="number" value="1" min="1" ></label>
-    <label>Shift: <input id="shift" type="number" value="0"></label>
+  <p>(Math.random() x <input id="scale" type="number" value="1" min="1">) + <input id="shift" type="number" value="0"></p>
+  <!-- <button onclick="plotRandomPoint()">Plot Random point</button> -->
 
-    <pre>(Math.random() * scale) + shift</pre>
 
-    <button onclick="plotRandomPoint()">Plot Random point</button>
+  <div id="calculator" style="height: 200px;"></div>
+  <script src="https://www.desmos.com/api/v1.5/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <script>
+    var calculatorSettings = {
+      settingsMenu: false,
+      zoomButtons: false,
+      keypad: false,
+      expressionsTopbar: false,
+      border: false,
+      lockViewport: true,
+      expressions: false
+    };
 
-    
-    <div id="calculator" style="height: 200px;"></div>
-    <script src="https://www.desmos.com/api/v0.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-    <script>
+    var calculator = Desmos.GraphingCalculator(
+      document.getElementById('calculator'),
+      calculatorSettings
+      );
+    var scaleInput = document.getElementById("scale");
+    var shiftInput = document.getElementById("shift");
       
-
-       var elt = document.getElementById('calculator');
-        var calculator = Desmos.GraphingCalculator(elt, { settingsMenu: false, zoomButtons:false, keypad: false, expressionsTopbar: false, border: false, lockViewport: true, expressions: false });
-        calculator.updateSettings({ showYAxis: false, showGrid: false });
-        calculator.setMathBounds({
-            left: 0,
-            right: 1,
-            bottom: -1,
-            top: 1
-          });
+    calculator.updateSettings({
+      showYAxis: false,
+      showGrid: false
+    });
 
 
-          var points = []
-          var scaleInput = document.getElementById("scale");
-          var shiftInput = document.getElementById("shift");
+    var points = []
+    
 
-          scaleInput.onchange = update;
-          shiftInput.onchange = update;
+    scaleInput.onchange = update;
+    shiftInput.onchange = update;
 
-          function getScale(){
-            return parseInt(scaleInput.value)
-          }
+    function getScale() {
+      return parseInt(scaleInput.value)
+    }
 
-          function getShift() {
-              return parseInt(shiftInput.value)
-            }
-          //alias for getShift. they are the same value
-          getRandMin = getShift;
+    function getShift() {
+      return parseInt(shiftInput.value)
+    }
+    //alias for getShift. they are the same value
+    getRandMin = getShift;
 
-          function getRandMax() {
-              return getScale() + getShift()
-            }
+    function getRandMax() {
+      return getScale() + getShift()
+    }
 
-            function update() {
-              calculator.removeExpressions(points);
+    function update() {
+      calculator.removeExpressions(points);
+      points = []
 
-              calculator.setMathBounds({
-                left: getRandMin(),
-                right: getRandMax(),
-                bottom: -1,
-                top: 1
-              });
+      let padding = .1*getScale()
+      calculator.setMathBounds({
+        left: getRandMin()- padding,
+        right: getRandMax()+ padding,
+        bottom: -1,
+        top: 1
+      });
+
+      let pointObj = {
+        id: "range" + points.length,
+        latex: getRandMin() + " <= x  < " + getRandMax(),
+        color: Desmos.Colors.BLUE
+      };
+
+      points.push(pointObj);
+      // Add an expression
+      calculator.setExpression(pointObj);
 
 
 
-            }
-            function plotRandomPoint() {
-              let point = (Math.random() * getScale()) + getShift()
-              let id = "point" + points.length
+    }
+    function plotRandomPoint() {
+      let point = (Math.random() * getScale()) + getShift()
+      let id = "point" + points.length
 
-              let pointObj = { id: id, latex: '(' + point + ',0)' };
-              points.push(pointObj);
-              // Add an expression
-                calculator.setExpression(pointObj);
+      let pointObj = { id: id, latex: '(' + point + ',0)' };
+      points.push(pointObj);
+      // Add an expression
+      calculator.setExpression(pointObj);
 
 
-              }
-    </script>
-  </body>
+    }
+
+    update()
+    
+  </script>
+</body>
+
 </html>
