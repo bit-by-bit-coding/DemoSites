@@ -93,9 +93,10 @@
     function update() {
       calculator.removeExpressions(points);
 
+      let padding = .1*getScale()
       calculator.setMathBounds({
-        left: getRandMin(),
-        right: getRandMax(),
+        left: getRandMin()- padding,
+        right: getRandMax()+ padding,
         bottom: -1,
         top: 1
       });
