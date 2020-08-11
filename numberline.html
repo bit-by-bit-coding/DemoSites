@@ -92,6 +92,7 @@
 
     function update() {
       calculator.removeExpressions(points);
+      points = []
 
       let padding = .1*getScale()
       calculator.setMathBounds({
