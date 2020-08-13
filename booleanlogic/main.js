@@ -271,7 +271,7 @@ function toggleAdvancedText(text) {
 		"and":"&&",
 		"or": "||",
 		"not":"!",
-		"equals": "===",
+		"equals": "==",
 		"does not equal":"!="
 	}
 	var lookupWords = kvSwap(lookupSymbol)
